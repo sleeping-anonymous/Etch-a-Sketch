@@ -1,4 +1,9 @@
 const container = document.querySelector(".container");
+const btn = document.querySelector("button");
+const clr = document.querySelector(".clear");
+
+
+
 
 function createGrid(size) {
     container.innerHTML = "";
@@ -14,8 +19,6 @@ function createGrid(size) {
 
     }
 }
-
-
 createGrid(16);
 
 function hoverMouse(e) {
@@ -29,3 +32,20 @@ function randomColorGenerator() {
 
     return `rgb(${red},${blue},${green})`;
 }
+
+
+btn.addEventListener("click", function (e) {
+    let input = parseInt(prompt("Enter the new size for grid (max 100)"));
+    while (isNaN(input) || input > 100 || input < 1) {
+        alert("Wrong Input! Try Again");
+        input = parseInt(prompt("Enter the new size for grid (max 100)"));
+        console.log(typeof input);
+
+    }
+    createGrid(input);
+})
+
+clr.addEventListener("click", function () {
+    createGrid(16);
+});
+
