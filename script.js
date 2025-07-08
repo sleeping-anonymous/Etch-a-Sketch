@@ -46,6 +46,11 @@ btn.addEventListener("click", function (e) {
 })
 
 clr.addEventListener("click", function () {
-    createGrid(16);
+    // createGrid(16);  lets keep grid size same
+
+    const cells = document.querySelectorAll(".grid");
+    cells.forEach(function (cell) {
+        cell.style.backgroundColor = "aliceblue";
+    })
 });
 
