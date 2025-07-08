@@ -9,8 +9,15 @@ function createGrid(size) {
         grid.style.width = `${gridSize}%`;
         container.appendChild(grid);
         grid.classList.add("grid");
+
+        grid.addEventListener("mouseenter", hoverMouse);  //have to apply in loop for every grid otherwise e.target.classList.contains("") for container
+
     }
 }
 
+
 createGrid(16);
 
+function hoverMouse(e) {
+    e.target.style.backgroundColor = "blue";
+}
