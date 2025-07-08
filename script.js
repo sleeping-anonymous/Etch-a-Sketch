@@ -19,5 +19,13 @@ function createGrid(size) {
 createGrid(16);
 
 function hoverMouse(e) {
-    e.target.style.backgroundColor = "blue";
+    e.target.style.backgroundColor = randomColorGenerator();
+}
+
+function randomColorGenerator() {
+    const red = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+
+    return `rgb(${red},${blue},${green})`;
 }
